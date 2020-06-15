@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 @Configuration
 @EnableWebSecurity
@@ -39,6 +39,12 @@ public class SecurityConfigration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/inputJoke").hasRole("USER")
 			.antMatchers("/", "/home", "/listJokes").permitAll()
 			.and().formLogin();
+		
+		http.authorizeRequests().antMatchers("/console/**").hasRole("USER");
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 	}
+	
+
 
 }
