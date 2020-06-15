@@ -16,14 +16,14 @@
 	            <caption><h2>List of jokes</h2></caption>
 	            <tr>
 	                <th></th>
-	                <th>Content</th>
 	                <th>Category</th>
+	                <th>Content</th>
 	            </tr>
 	            <c:forEach var="joke" items="${jokes}">
 	                <tr>
 	                    <td><%out.print(i++);%></td>
-	                    <td><c:out value="${joke.getContent()}" /></td>
 	                    <td><c:out value="${joke.getCategory().getName()}" /></td>
+	                    <td><c:out value="${joke.getContent()}" /></td>
 	                </tr>
 	            </c:forEach>
 	        </table>

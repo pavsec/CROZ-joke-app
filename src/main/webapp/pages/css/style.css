@@ -21,5 +21,36 @@ span.err {
 
 div.err {
 	max-width: 50%;
+}
 
+
+div.home_page {
+  position: relative;
+  width: 85%;
+  float: left;
+  height: 100%;
+  /*z-index: 1010101010*/
+}
+
+div.login {
+  position: relative;
+  width: 15%;
+  float: left;
+  height: 100%;
+  text-align: center;
+  /*z-index: 1010101010*/
+}
+
+
+a:link, a:visited {
+  background-color: #0BB7FF;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #009BDC;
 }

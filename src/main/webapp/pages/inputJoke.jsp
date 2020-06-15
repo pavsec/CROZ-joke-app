@@ -32,11 +32,8 @@
 				<input type="submit" name="submit">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			</form>
-	        <br>
+	        <br><br>
 	        <a href="home">Return</a> <br><br>
-	        <form action="/logout">
-	        	<input type="submit" name="submit" value="Sign out">
-	        </form>
 		</div>
     </body>
 </html>
