@@ -17,7 +17,7 @@
 				<span name="errors" class="err">
 					<c:choose>
 						<c:when test="${errors.hasErrors()}">
-						Joke content size must be between 1 and 1000 characters<br><br>
+						Joke size must be between 1 and 1000 characters<br><br>
 						</c:when>
 						<c:otherwise></c:otherwise>
 					</c:choose>
@@ -30,10 +30,11 @@
 		            </c:forEach>
 				</select> <br><br>
 				<input type="submit" name="submit">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			</form>
 	        <br>
 	        <a href="home">Return</a> <br><br>
-	        <form action="home">
+	        <form action="/logout">
 	        	<input type="submit" name="submit" value="Sign out">
 	        </form>
 		</div>
