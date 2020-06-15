@@ -9,30 +9,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import croz.webapp.model.Category;
 import croz.webapp.model.Joke;
+import croz.webapp.model.Category;
 import croz.webapp.service.CategoryService;
 import croz.webapp.service.JokeService;
 
-@Controller
-public class HomeController {
 
+@Controller
+public class JokeController {
+	
 	@Autowired
 	private JokeService jokeService;
 	
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@RequestMapping(value= {"/", "home"})
 	public String home() {
 		return "home";
-	}
-	
-	@RequestMapping("listJokes")
-	public String listJokes(Model model) {
-		List<Joke> jokes = jokeService.listAll();
-	    model.addAttribute("jokes", jokes);
-		return "listJokes";
 	}
 	
 	@RequestMapping("inputJoke")
@@ -47,4 +41,16 @@ public class HomeController {
 		jokeService.insertJoke(joke);
 		return "home";
 	}
+	
+
+	
+	@RequestMapping("listJokes")
+	public String listJokes(Model model) {
+		List<Joke> jokes = jokeService.listAll();
+	    model.addAttribute("jokes", jokes);
+		return "listJokes";
+	}
+	
+
+	
 }

@@ -11,7 +11,6 @@ import croz.webapp.model.Joke;
 
 @Service
 public class JokeService {
-	
 	@Autowired
     private JokeRepo jokeRepo;
 	
@@ -19,6 +18,7 @@ public class JokeService {
 		 jokeRepo.save(joke);
 	 }
  
+	 
 	 public List<Joke> listAll(){
 		 return jokeRepo.findAll();
 	 }
@@ -27,3 +27,5 @@ public class JokeService {
 		 return jokeRepo.findById(id);
 	 }
 }
+
+	

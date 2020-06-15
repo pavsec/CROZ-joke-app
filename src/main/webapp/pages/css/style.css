@@ -1,0 +1,15 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+}
+
+table.joke_table {
+	border: 1px solid #999;
+	border-collapse: collapse;
+	padding: 0.5rem;
+	max-width: 60%;
+}
+
+th, tr, td {
+	padding: 0.5rem;
+	border: 1px solid #999;
+}

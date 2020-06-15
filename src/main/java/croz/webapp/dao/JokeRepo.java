@@ -6,4 +6,5 @@ import croz.webapp.model.Joke;
 
 public interface JokeRepo extends JpaRepository<Joke, Integer> {
 
+
 }

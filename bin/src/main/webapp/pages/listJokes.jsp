@@ -5,14 +5,13 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>List jokes</title>
-		<link href="pages/css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	
 	<body>
 		<%int i = 1;%>
 
-	    <div align="center" >
-	        <table class="joke_table">
+	    <div align="center">
+	        <table border="1" cellpadding="5">
 	            <caption><h2>List of jokes</h2></caption>
 	            <tr>
 	                <th></th>
