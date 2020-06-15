@@ -13,3 +13,13 @@ th, tr, td {
 	padding: 0.5rem;
 	border: 1px solid #999;
 }
+
+span.err {
+	color: #FF0000;
+	text-align: center;
+}
+
+div.err {
+	max-width: 50%;
+
+}

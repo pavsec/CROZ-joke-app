@@ -5,13 +5,23 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>List jokes</title>
+		<link href="pages/css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	
 	<body>
 		<div align="center">
 			<h2>Form for adding jokes</h2>
-			<form action="inputJoke" method="post">
+			<form action="inputJoke" method="post" object="${joke}">
 				<textarea name="content" rows="10" cols="100"></textarea> <br><br>
+				<div class="err">
+				<span name="errors" class="err">
+					<c:choose>
+						<c:when test="${errors.hasErrors()}">
+						Joke content size must be between 1 and 1000 characters<br><br>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+				</div>
 				<select name="category" id="cat" >
 					<c:forEach var="category" items="${cats}">
 		                <option value="${category.getId()}">

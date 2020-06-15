@@ -2,9 +2,12 @@ package croz.webapp.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +36,20 @@ public class JokeController {
 	public String addJoke(Model model) {
 		List<Category> cats = categoryService.listAll();
 		model.addAttribute("cats", cats);
+		model.addAttribute(new Joke());
 		return "inputJoke";
 	}
 	
 	@PostMapping("inputJoke")
-	public String addJoke(@ModelAttribute Joke joke) {
+	public String addJoke(@ModelAttribute @Valid Joke joke, Errors errors, Model model) {
+		if (errors.hasErrors()) {
+			model.addAttribute("errors", errors);
+			List<Category> cats = categoryService.listAll();
+			model.addAttribute("cats", cats);
+			model.addAttribute(new Joke());
+			return "inputJoke";
+		}
+		
 		jokeService.insertJoke(joke);
 		return "home";
 	}

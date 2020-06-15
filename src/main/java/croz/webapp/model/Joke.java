@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Component;
@@ -30,6 +31,7 @@ public class Joke {
 	private int id;
 	
 	@NotEmpty
+	@Size(min=1, max=1000, message="Content must not be empty")
 	@Column(name="content", columnDefinition="VARCHAR(1000)")
 	private String content;
 
