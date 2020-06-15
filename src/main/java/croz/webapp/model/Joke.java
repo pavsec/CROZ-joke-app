@@ -30,7 +30,7 @@ public class Joke {
 	private int id;
 	
 	@NotEmpty
-	@Column(name="content")
+	@Column(name="content", columnDefinition="VARCHAR(1000)")
 	private String content;
 
 	@Column(name="likes", columnDefinition="INT DEFAULT 0")
