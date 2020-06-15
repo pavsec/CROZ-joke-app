@@ -29,7 +29,6 @@ div.home_page {
   width: 85%;
   float: left;
   height: 100%;
-  /*z-index: 1010101010*/
 }
 
 div.login {
@@ -38,7 +37,6 @@ div.login {
   float: left;
   height: 100%;
   text-align: center;
-  /*z-index: 1010101010*/
 }
 
 
